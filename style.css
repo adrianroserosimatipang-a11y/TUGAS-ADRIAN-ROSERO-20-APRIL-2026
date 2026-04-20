@@ -1,0 +1,240 @@
+/* --- 1. RESET & DASAR --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Mencegah elemen meluber karena padding */
+    text-decoration: none;
+    scroll-behavior: smooth; /* Efek scroll halus saat klik menu */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* --- 2. NAVIGASI (STICKY) --- */
+nav {
+    width: 100%;
+    background: #ffffff;
+    height: 80px;
+    line-height: 80px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid #2196F3; /* Tema Biru (NPM Ganjil) */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo a {
+    font-size: 18px;
+    font-weight: 800;
+    font-family: courier;
+    color: #2196F3;
+    float: left;
+}
+
+.menu {
+    float: right;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: #333;
+    font-weight: bold;
+    padding: 0 15px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #2196F3;
+}
+
+/* --- 3. PENGATURAN SECTION (HOME & TENTANG) --- */
+section {
+    padding: 100px 0;
+    display: flex; /* Membuat teks dan gambar sejajar */
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px; /* Jarak antara teks dan gambar */
+}
+
+/* Membalik urutan section "Tentang" agar gambar di kanan */
+#tentang {
+    flex-direction: row-reverse;
+}
+
+section img {
+    width: 45%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.kolom {
+    width: 50%;
+}
+
+.kolom .deskripsi {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'comic sans ms';
+    color: #2196F3;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-family: 'comic sans ms';
+    font-size: 40px;
+    color: #2196F3;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* --- 4. SECTION ARTIKEL (KHUSUS) --- */
+#artikel {
+    display: block; /* Artikel memanjang ke bawah, bukan menyamping */
+    background: #ffffff;
+    padding: 60px;
+    border-radius: 25px;
+    border: 1px solid #e0e0e0;
+    margin: 50px auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.author-info {
+    background: #f1f8ff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-left: 6px solid #2196F3;
+}
+
+.author-info p {
+    font-size: 15px;
+    margin: 5px 0;
+    font-weight: 600;
+    color: #444;
+}
+
+.judul-artikel {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.img-sensor {
+    width: 100% !important; /* Paksa gambar sensor proporsional */
+    max-width: 550px !important;
+    display: block;
+    margin: 30px auto !important;
+    border: 4px solid #f0f0f0;
+}
+
+.teks-artikel h3 {
+    margin: 30px 0 15px 0;
+    color: #2196F3;
+    font-family: 'comic sans ms';
+    border-bottom: 2px solid #f0f0f0;
+    display: inline-block;
+}
+
+.teks-artikel p {
+    margin-bottom: 20px;
+    text-align: justify;
+    color: #444;
+}
+
+.teks-artikel ul {
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+.teks-artikel li {
+    margin-bottom: 10px;
+}
+
+/* --- 5. FOOTER & KONTAK --- */
+#kontak {
+    background: #23272b;
+    color: white;
+    padding: 80px 0;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.footer-section h3 {
+    margin-bottom: 25px;
+    color: #2196F3;
+    font-family: 'comic sans ms';
+}
+
+.footer-section p {
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #bdc3c7;
+}
+
+.footer-section a {
+    color: #2196F3;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* --- 6. COPYRIGHT --- */
+#copyright {
+    text-align: center;
+    background: #2196F3;
+    color: white;
+    padding: 25px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* --- 7. RESPONSIVE (MOBILE) --- */
+@media (max-width: 768px) {
+    section, #tentang {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .kolom, section img {
+        width: 100%;
+    }
+    
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .menu {
+        display: none; /* Menyembunyikan menu di HP agar simpel */
+    }
+}
